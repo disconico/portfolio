@@ -1,22 +1,72 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import DropdownButton from './DropdownButton';
 
 import useWindowSize from '../hooks/useWindowSize';
 
+import logo from '../assets/logo.png';
+
 const Header = () => {
   const { width } = useWindowSize();
+  const location = useLocation();
+  const pathname = location.pathname;
+  console.log(pathname);
+
+  // let currentTab;
+  // const getCurrentTab = () => {
+  //   if (pathname === '/' || pathname === '/home') {
+  //     currentTab = 'portfolio';
+  //     console.log(currentTab);
+  //   } else if (pathname === '/contact') {
+  //     currentTab = 'contact';
+  //     console.log(currentTab);
+  //   } else if (pathname === '/about') {
+  //     currentTab = 'about';
+  //     console.log(currentTab);
+  //   }
+  // };
+
+  // getCurrentTab();
+
   return (
     <header>
       <div className='header-left'>
-        <Link to={'/'}>Coucou</Link>
+        <Link to={'/'}>
+          <img src={logo} className='header--logo' />
+        </Link>
       </div>
-      {width > 800 && <div className='header-right'>Lien </div>}
-      {width <= 800 && (
+      {width > 800 && (
         <div className='header-right'>
-          {<DropdownButton />}
+          <Link to='/'>
+            <button
+              className={`header--btn ${
+                pathname === '/' ? 'active-tab' : undefined
+              }`}
+            >
+              Portfolio
+            </button>
+          </Link>
+          <Link to='/contact'>
+            <button
+              className={`header--btn ${
+                pathname === '/contact' ? 'active-tab' : undefined
+              }`}
+            >
+              Contact
+            </button>
+          </Link>
+          <Link to='/about'>
+            <button
+              className={`header--btn ${
+                pathname === '/about' ? 'active-tab' : undefined
+              }`}
+            >
+              About
+            </button>
+          </Link>
         </div>
       )}
+      {width <= 800 && <div className='header-right'>{<DropdownButton />}</div>}
     </header>
   );
 };
