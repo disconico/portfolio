@@ -12,22 +12,6 @@ const Header = () => {
   const pathname = location.pathname;
   console.log(pathname);
 
-  // let currentTab;
-  // const getCurrentTab = () => {
-  //   if (pathname === '/' || pathname === '/home') {
-  //     currentTab = 'portfolio';
-  //     console.log(currentTab);
-  //   } else if (pathname === '/contact') {
-  //     currentTab = 'contact';
-  //     console.log(currentTab);
-  //   } else if (pathname === '/about') {
-  //     currentTab = 'about';
-  //     console.log(currentTab);
-  //   }
-  // };
-
-  // getCurrentTab();
-
   return (
     <header>
       <div className='header-left'>

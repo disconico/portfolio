@@ -12,7 +12,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  ignorePatterns: ['logos.jsx'],
+  // ignorePatterns: ['logos.jsx'],
   rules: {
     quotes: ['error', 'single'],
   },
