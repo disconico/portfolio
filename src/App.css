@@ -24,6 +24,11 @@
 
 h2 {
   font-family: "SF-strong", sans-serif;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 a {
@@ -79,14 +84,12 @@ a:active {
 
 header {
   background-color: white;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
   /* border-bottom: 1px solid grey;
  box-shadow: 0px 15px 10px -15px  */
-
 }
 
 .header--logo {
@@ -103,6 +106,13 @@ header {
 main {
   background-color: white;
 
+}
+
+.main-about {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 
@@ -146,7 +156,7 @@ main {
 
 .project-card--img-container img:hover {
   transform: scale(1.2);
-  filter: grayscale(50%);
+  filter: grayscale(20%);
 }
 
 .project-card--info-container {
@@ -238,3 +248,12 @@ footer {
   border-bottom: 2px solid rgb(206 151 62);
 
 } 
+
+@media (max-width: 800px) {
+
+  .main-about {
+
+    flex-direction: column;
+  }
+
+}

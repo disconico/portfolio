@@ -3,7 +3,6 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Link } from 'react-router-dom';
 
 const options = ['Contact', 'Atria', 'Callisto'];
 
@@ -46,10 +45,10 @@ const DropdownButton = () => {
           },
         }}
       >
-        {options.map((option) => (
-          <Link to={`/${option}`} key={option} className='menu-item'>
-            <MenuItem onClick={handleClose}>{option}</MenuItem>
-          </Link>
+        {options.map((option, index) => (
+          <MenuItem key={index} onClick={handleClose} className='menu-item'>
+            {option}
+          </MenuItem>
         ))}
       </Menu>
     </div>
