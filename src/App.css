@@ -7,14 +7,24 @@
   font-family: "SF_strong";
   src: url(../src/assets//fonts/San\ Francisco\ Bold.ttf);
 }
+@font-face {
+  font-family: "first-job";
+  src: url(../src/assets//fonts/FirstJob-X8rP.ttf);
+}
+@font-face {
+  font-family: "sentury";
+  src: url(../src/assets//fonts/Sentury.ttf);
+}
 
 #root {
   max-width: 1280px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   text-align: center;
   --main-color: rgb(50, 44, 44);
+  --side-color: rgb(255, 191, 95);
+  --img-url: url('./assets/ppnico.png');
 
 }
 
@@ -79,21 +89,41 @@ a:active {
 .App {
   height: 100%;
   display: grid;
-  grid-template-rows: 100px 1fr 80px;
+  grid-template-rows: 80px 1fr 80px;
+  position: relative;
 }
 
-header {
+.header {
+  position: sticky;
+  top: 0px;
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  /* border-bottom: 1px solid grey;
- box-shadow: 0px 15px 10px -15px  */
+  padding: 0rem 1rem;
+  z-index: 1000;
+
+  transition-property: all; 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 350ms;
+}
+
+.header.hide {
+  top: -10rem;
+}
+
+.header-left {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF-strong', sans-serif;
+  font-size: 0.4rem;
+  font-weight: bold;
 }
 
 .header--logo {
-  height: 100px;
+  height: 80px;
 }
 
 .header-right {
@@ -109,12 +139,42 @@ main {
 }
 
 .main-about {
-  height: 100vh;
+  height: calc(100vh - 80px);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
+.main-about--photo {
+  flex-shrink: 0;
+	/* margin: 20px; */
+	height: calc(200px + 6vw);
+	width: calc(200px + 6vw);
+	border: calc(6px + 0.2vw) solid transparent;
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	background-size: cover;
+	box-sizing: border-box;
+	/* box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5); */
+  border-radius: 50%;
+	background-image: var(--img-url),
+  linear-gradient(to bottom left, #f83600, #f9d423);
+}
+
+
+.main-photo{
+  max-width: 300px;
+}
+
+.arrow {
+  transform: rotate(30deg);
+ margin-top: 80px;
+  /* transform: scaleY(-1) */
+}
+
+.main-about--desc{
+  display: flex;
+}
 
 .main-projects {
   display: grid;
@@ -180,6 +240,13 @@ main {
   gap: 1rem;
 }
 
+.external-icon {
+  transition: transform 0.40s;
+}
+.external-icon:hover{
+  transform: scale(1.1);
+}
+
 .project-card--description {
   text-align: justify;
 }
@@ -198,6 +265,7 @@ main {
 
 footer {
   background-color: white;
+  margin-top: 1rem;
 }
 
 /* .header--btn {
@@ -239,21 +307,100 @@ footer {
 .header--btn:hover {
   cursor: pointer;
   color: rgb(55 65 81);
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid var(--side-color);
 
 }
 
-.active-tab {
-  cursor: pointer;
-  border-bottom: 2px solid rgb(206 151 62);
 
-} 
+
+.back-button {
+  display: inline-block;
+  background-color: var(--side-color);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1001;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+.back-button:active {
+  background-color: #555;
+}
+.back-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button-span {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.button-span span {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'SF_strong', sans-serif;
+}
+
+.button-span span:before,
+.button-span span:after {
+  position: absolute;
+  content: "PROJECTS";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--side-color);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.button-span span:before {
+  color: #fff;
+  background: var(--side-color);
+  transform: rotateY(0deg) translateZ(25px);
+}
+
+.button-span span:after {
+  color: var(--side-color);
+  transform: rotateX(90deg) translateZ(25px);
+}
+
+.button-span span:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
 
 @media (max-width: 800px) {
 
   .main-about {
 
     flex-direction: column;
+    /* height: 100vh; */
+  }
+
+  .main-about--photo {
+    /* margin-top: 1.5rem; */
   }
 
 }

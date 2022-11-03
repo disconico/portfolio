@@ -1,36 +1,40 @@
-import React, { useRef } from 'react';
+/* eslint-disable react/display-name */
+import React, { forwardRef } from 'react';
 import ProjectCard from './ProjectCard';
 
 import projectList from '../projectList';
+import arrow from '../assets/arrow.svg';
 
-const Home = () => {
+const Home = forwardRef((props, ref) => {
   const projectCards = projectList.map((project, index) => {
     return <ProjectCard key={index} project={project} />;
   });
 
-  const portFolioRef = useRef(null);
+  const { aboutRef, projectsRef } = ref.current;
+
   const handleClick = () => {
-    portFolioRef.current.scrollIntoView({ behavior: 'smooth' });
+    projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <main>
-      <div className='main-about'>
-        <div className='main-about--photo'>
-          <h2>Hello its me</h2>
-        </div>
+      <div className='main-about' ref={aboutRef}>
+        <div className='main-about--photo'></div>
+        <img src={arrow} className='arrow'></img>
         <div className='main-about--desc'>
           <div>
             <h2>Hello its me</h2>
-            <button onClick={handleClick}>Portfolio</button>
+            <span className='button-span' onClick={handleClick}>
+              <span></span>
+            </span>
           </div>
         </div>
       </div>
-      <div className='main-projects' ref={portFolioRef}>
+      <div className='main-projects' ref={projectsRef}>
         {projectCards}
       </div>
     </main>
   );
-};
+});
 
 export default Home;

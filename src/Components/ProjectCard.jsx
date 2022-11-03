@@ -33,10 +33,20 @@ const ProjectCard = ({ project }) => {
         <div className='project-card--name-and-icons'>
           <h2>{name}</h2>
           <div className='project-card--icons'>
-            <a href={githubLink} target='_blank' rel='noreferrer'>
+            <a
+              href={githubLink}
+              target='_blank'
+              rel='noreferrer'
+              className='external-icon'
+            >
               {github}
             </a>
-            <a href={hostingLink} target='_blank' rel='noreferrer'>
+            <a
+              href={hostingLink}
+              target='_blank'
+              rel='noreferrer'
+              className='external-icon'
+            >
               {link}
             </a>
           </div>
