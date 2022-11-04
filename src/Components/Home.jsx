@@ -20,7 +20,7 @@ const Home = forwardRef((props, ref) => {
     <main>
       <div className='main-about' ref={aboutRef}>
         <div className='main-about--photo'></div>
-        <img src={arrow} className='arrow'></img>
+        <img src={arrow} className='arrow' draggable={false}></img>
         <div className='main-about--desc'>
           <div>
             <h2>Hello its me</h2>

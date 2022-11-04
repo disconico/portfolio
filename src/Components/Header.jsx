@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropdownButton from './DropdownButton';
-
 import useWindowSize from '../hooks/useWindowSize';
 import useScrollDirection from '../hooks/useScrollDirection';
 
@@ -11,7 +10,7 @@ const Header = ({ footerRef, homeRefs }) => {
   const { width } = useWindowSize();
   const scrollDirection = useScrollDirection();
 
-  const aboutRef = homeRefs.current.aboutRef;
+  // const aboutRef = homeRefs.current.aboutRef;
   const projectsRef = homeRefs.current.projectsRef;
 
   const handleFooterClick = () => {
@@ -30,10 +29,14 @@ const Header = ({ footerRef, homeRefs }) => {
   return (
     <header className={`header ${scrollDirection === 'up' ? 'show' : 'hide'}`}>
       <div className='header-left'>
-        <img src={logo} className='header--logo' />
-        <h1>-</h1>
+        <img src={logo} className='header--logo' draggable='false' />
+
         {width > 800 && (
-          <h1 className='header--title'>THE @DISCONICO PORTFOLIO</h1>
+          <>
+            {' '}
+            <h1>-</h1>
+            <h1 className='header--title'>THE @DISCONICO PORTFOLIO</h1>
+          </>
         )}
       </div>
       {width > 800 && (
@@ -49,7 +52,11 @@ const Header = ({ footerRef, homeRefs }) => {
           </button>
         </div>
       )}
-      {width <= 800 && <div className='header-right'>{<DropdownButton />}</div>}
+      {width <= 800 && (
+        <div className='header-right'>
+          {<DropdownButton footerRef={footerRef} homeRefs={homeRefs} />}
+        </div>
+      )}
     </header>
   );
 };
