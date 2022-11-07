@@ -1,5 +1,3 @@
-import React from 'react';
-
 import waldo from '../src/assets/images/waldo.png';
 import admin from '../src/assets/images/admin.png';
 import biotyplants from '../src/assets/images/biotyplants.png';

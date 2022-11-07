@@ -201,7 +201,7 @@ main {
   font-family: 'SF_strong';
 }
 .main-about--desc h2 {
-  font-family: 'SF';
+  font-family: "SF", sans-serif;
 }
 
 .project-card {
