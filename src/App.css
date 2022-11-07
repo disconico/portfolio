@@ -58,7 +58,17 @@ a:active {
   color: var(--light-blue);
 }
 
+.underline--magical {
+  background-image: linear-gradient(120deg, #f7d06b 0%, #f39e71 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
 
+.underline--magical:hover {
+  background-size: 100% 88%;
+}
 
 @keyframes logo-spin {
   from {
@@ -129,11 +139,13 @@ main {
 
 .main-about {
   height: 100vh;
+  min-height: 850px;
   display: flex;
   justify-content:center;
   /* justify-content:space-around; */
   /* justify-content: safe; */
   align-items: center;
+  padding: 1rem;
 }
 
 .main-about--photo {
@@ -150,6 +162,7 @@ main {
   border-radius: 50%;
 	background-image: var(--img-url),
   linear-gradient(to bottom left, #f83600, #f9d423);
+  margin-bottom: 3rem;
 }
 
 
@@ -166,6 +179,13 @@ main {
 
 .main-about--desc{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 400px;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .main-projects {
@@ -175,6 +195,13 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   /* justify-content: center; */
   /* grid-template-columns: repeat(auto-fill, 360px ) ; */
+}
+
+.main-about--desc h1 {
+  font-family: 'SF_strong';
+}
+.main-about--desc h2 {
+  font-family: 'SF';
 }
 
 .project-card {
@@ -408,8 +435,13 @@ footer {
     flex-grow: 1;
   }
 
+  .main-about--photo {
+    margin: 0;
+  }
+
   .main-about--desc {
-    padding-bottom: 4rem;
+    padding: 0 4rem 2rem 4rem;
+    margin: 0;
   }
   
   .arrow {

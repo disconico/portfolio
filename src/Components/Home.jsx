@@ -22,12 +22,20 @@ const Home = forwardRef((props, ref) => {
         <div className='main-about--photo'></div>
         <img src={arrow} className='arrow' draggable={false}></img>
         <div className='main-about--desc'>
-          <div>
-            <h2>Hello its me</h2>
-            <span className='button-span' onClick={handleClick}>
-              <span></span>
-            </span>
-          </div>
+          <h1>Hello it&apos;s me !</h1>
+          <h2>
+            I&apos;m <span className='underline--magical'>Nicolas</span>, alias
+            <span className='underline--magical'> disconico</span>, a 29 years
+            old full-stack developer and I&apos;m currently learning{' '}
+            <span className='underline--magical'>React</span> &{' '}
+            <span className='underline--magical'>NodeJS</span>.{' '}
+          </h2>
+          <h3>
+            Check my awesome projects by clicking the link bellow &#x2B07;
+          </h3>
+          <span className='button-span' onClick={handleClick}>
+            <span></span>
+          </span>
         </div>
       </div>
       <div className='main-projects' ref={projectsRef}>

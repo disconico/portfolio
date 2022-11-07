@@ -1,3 +1,5 @@
+import React from 'react';
+
 import waldo from '../src/assets/images/waldo.png';
 import admin from '../src/assets/images/admin.png';
 import biotyplants from '../src/assets/images/biotyplants.png';
@@ -17,7 +19,7 @@ const projectList = [
     id: 1,
     name: 'Where is Luffy?',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      'A photo tagging app to play "Where is Waldo", living on Firebase and using FB Hosting, FB Authentication with Google and Cloud Firestore. The app is built using React and themed based on the One Piece world!',
     date: 'asd',
     src: waldo,
     githubLink: 'https://github.com/disconico/where-s-luffy',
@@ -36,7 +38,7 @@ const projectList = [
     id: 2,
     name: 'Biotyplants',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      'An e-commerce site with a shopping cart build with React using: Hooks / useState, useEffect, Context, Refs, Custom hooks, Reducers. The app uses React Router Dom to provide Routes for each product page.',
     date: 'asd',
     src: biotyplants,
     githubLink: 'https://github.com/disconico/shopping_cart',
@@ -55,7 +57,7 @@ const projectList = [
     id: 3,
     name: 'Quizzos',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A trivia Quizz built with React and fetching questions from www.opentdb.com. The user can choose the number of questions, difficulty and theme. ',
     date: 'asd',
     src: quizzos,
     githubLink: 'https://github.com/disconico/react-quiz',
@@ -74,7 +76,7 @@ const projectList = [
     id: 4,
     name: 'My Weather',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A weather forecast site using the OpenWeatherMap API. The app displays a daily and weekly forecast based on the location chose by the user and a motivational quote to cheer you up !',
     date: 'asd',
     src: weather,
     githubLink: 'https://github.com/disconico/weather-app',
@@ -94,7 +96,7 @@ const projectList = [
     id: 5,
     name: 'To DO !',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A to-do app built with plain JavaScript and using local storage to save the data. You can filter tasks by projects or by due date.',
     date: 'asd',
     src: todo,
     githubLink: 'https://github.com/disconico/to-do-list',
@@ -114,7 +116,7 @@ const projectList = [
     id: 6,
     name: 'La Buona Cucina',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'An Italian restaurant site with a menu, contact and about page.',
     date: 'asd',
     src: restaurant,
     githubLink: 'https://github.com/disconico/restaurant-page',
@@ -134,7 +136,7 @@ const projectList = [
     id: 7,
     name: 'Book Librabry',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A book library app built with plain JavaScript and using local storage to save the data.',
     date: 'asd',
     src: library,
     githubLink: 'https://github.com/disconico/library',
@@ -153,8 +155,7 @@ const projectList = [
   {
     id: 8,
     name: 'Tic-Tac-Toe',
-    description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'A Star-Wars themed tic-tac-toe to play with a friend !',
     date: 'asd',
     src: tictactoe,
     githubLink: 'https://github.com/disconico/tic-tac-toe',
@@ -174,7 +175,7 @@ const projectList = [
     id: 9,
     name: 'Personnal Dashboard',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A personal dashboard theme built to train CSS Flexbox and Grid !',
     date: 'asd',
     src: admin,
     githubLink: 'https://github.com/disconico/admin-dashboard',
@@ -194,7 +195,7 @@ const projectList = [
     id: 10,
     name: 'Sign-up form',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A mobile-responsive sign-up form! Inspired by the Japanese culture.',
     date: 'asd',
     src: signup,
     githubLink: 'https://github.com/disconico/signup-form',
@@ -214,7 +215,7 @@ const projectList = [
     id: 11,
     name: 'Calculator',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A calculator built with plain JavaScript to perform simple operations.',
     date: 'asd',
     src: calculator,
     githubLink: 'https://github.com/disconico/calculator',
@@ -234,7 +235,7 @@ const projectList = [
     id: 12,
     name: 'Etch-a-sketch',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'A drawing app based on JavaScript event listeners. You can chose to draw tiles with black color or random colors for each one ! And if you mess up, you can still erase your art and start again :)!',
     date: 'asd',
     src: drawing,
     githubLink: 'https://github.com/disconico/drawing',
@@ -254,7 +255,7 @@ const projectList = [
     id: 13,
     name: 'Rock Paper Scissors',
     description:
-      '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'My first project! A working (but bad looking...meh) rock paper scissors game to play against the computer!',
     date: 'asd',
     src: rockpaperscissors,
     githubLink: 'https://github.com/disconico/rock-paper-scissors',

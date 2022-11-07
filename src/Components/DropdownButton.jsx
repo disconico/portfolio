@@ -12,7 +12,6 @@ const DropdownButton = ({ footerRef, homeRefs }) => {
   const open = Boolean(anchorEl);
 
   const projectsRef = homeRefs.current.projectsRef;
-  console.log(projectsRef.current.offsetTop);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
