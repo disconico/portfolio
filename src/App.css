@@ -338,7 +338,9 @@ footer {
 
 
 .back-button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--side-color);
   width: 40px;
   height: 40px;
@@ -365,6 +367,7 @@ footer {
   opacity: 1;
   visibility: visible;
 }
+
 
 .button-span {
   position: relative;
@@ -412,6 +415,64 @@ footer {
 
 .button-span span:hover {
   transform: translateZ(-25px) rotateX(-90deg);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > button {
+  background-color: Transparent;
+background-repeat:no-repeat;
+border: none;
+  color: var(--main-color);
+
+  /* border: 1.5px solid var(--main-color);
+  border-radius: 50%; */
+  height: 40px;
+  width: 40px;
+  font-size: 2rem;
+  transition: transform ease-out 0.25s;
+}
+
+.dropdown > button:hover {
+  cursor: pointer;
+  transform:scale(1.2)
+}
+
+.menu {
+  position: absolute;
+  left: -130px;
+  list-style-type: none;
+  margin: 8px 0;
+  padding: 0;
+  border: 1px solid rgb(82, 82, 82);
+  border-radius: 2px;
+  width: 150px;
+  
+}
+
+.menu > li {
+  margin: 0;
+  background-color: white;
+}
+
+.menu > li:hover {
+  background-color: lightgray;
+}
+
+.menu > li > button {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
 }
 
 

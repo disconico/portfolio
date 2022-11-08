@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import './App.css';
 
-import Header from './Components/Header';
-import Home from './Components/Home';
-import Footer from './Components/Footer';
+import Header from './pages/Header';
+import Home from './pages/Home';
+import Footer from './pages/Footer';
 import BackToTopBtn from './Components/BackToTop';
 
-function App() {
+const App = () => {
   const footerRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -14,13 +14,11 @@ function App() {
   return (
     <div className='App'>
       <Header footerRef={footerRef} homeRefs={homeRefs} />
-
-      {/* <Home ref={homeRefs}  /> */}
       <Home ref={homeRefs} />
       <Footer ref={footerRef} />
       <BackToTopBtn aboutRef={aboutRef} />
     </div>
   );
-}
+};
 
 export default App;

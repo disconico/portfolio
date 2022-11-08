@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DropdownButton from './DropdownButton';
 import useWindowSize from '../hooks/useWindowSize';
 import useScrollDirection from '../hooks/useScrollDirection';
+import DropdownBtn from '../Components/DropdownBtn';
 
 import logo from '../assets/logov3.png';
 
@@ -26,6 +26,18 @@ const Header = ({ footerRef, homeRefs }) => {
     projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const dropdownMenu = [
+    <button onClick={handleAboutClick} key='1'>
+      About
+    </button>,
+    <button onClick={handleProjectClick} key='2'>
+      Projects
+    </button>,
+    <button onClick={handleFooterClick} key='3'>
+      Contact
+    </button>,
+  ];
+
   return (
     <header className={`header ${scrollDirection === 'up' ? 'show' : 'hide'}`}>
       <div className='header-left'>
@@ -39,6 +51,7 @@ const Header = ({ footerRef, homeRefs }) => {
           </>
         )}
       </div>
+
       {width > 800 && (
         <div className='header-right'>
           <button className='header--btn' onClick={handleAboutClick}>
@@ -53,9 +66,7 @@ const Header = ({ footerRef, homeRefs }) => {
         </div>
       )}
       {width <= 800 && (
-        <div className='header-right'>
-          {<DropdownButton footerRef={footerRef} homeRefs={homeRefs} />}
-        </div>
+        <DropdownBtn trigger={<button>⋮</button>} menu={dropdownMenu} />
       )}
     </header>
   );

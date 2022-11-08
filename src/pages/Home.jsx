@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import React, { forwardRef } from 'react';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../Components/ProjectCard';
 
 import projectList from '../projectList';
 import arrow from '../assets/arrow.svg';
